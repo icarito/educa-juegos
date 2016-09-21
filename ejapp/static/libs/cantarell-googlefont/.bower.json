@@ -1,0 +1,26 @@
+{
+  "name": "cantarell-googlefont",
+  "license": "OFL",
+  "authors": [
+    "Dave Crossland"
+  ],
+  "homepage": "https://fonts.google.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google-fonts-bower/cantarell-bower.git"
+  },
+  "description": "Cantarell font",
+  "keywords": [
+    "font",
+    "SANS_SERIF"
+  ],
+  "_release": "6f39389ebb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6f39389ebb2affad19b804cc7414660f7b9793d0"
+  },
+  "_source": "https://github.com/google-fonts-bower/cantarell-bower.git",
+  "_target": "*",
+  "_originalSource": "cantarell-googlefont"
+}
