@@ -3,7 +3,7 @@
 from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, login_user, logout_user
 
-from ejapp.extensions import login_manager
+from ejapp.extensions import login_manager, pages
 from ejapp.public.forms import LoginForm
 from ejapp.user.forms import RegisterForm
 from ejapp.user.models import User
@@ -18,8 +18,16 @@ def load_user(user_id):
     return User.get_by_id(int(user_id))
 
 
-@blueprint.route('/', methods=['GET', 'POST'])
-def home():
+@blueprint.route('/')
+@blueprint.route('/<path:path>/')
+def home(path="index"):
+    page = pages.get_or_404(path)
+    template = page.meta.get('template', 'public/flatpages.html')
+    return render_template(template, page=page)
+
+
+@blueprint.route('/login', methods=['GET', 'POST'])
+def login():
     """Home page."""
     form = LoginForm(request.form)
     # Handle logging in
